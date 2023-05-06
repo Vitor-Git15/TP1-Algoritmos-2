@@ -18,4 +18,4 @@ make decompress
 ```
 
 ## Arquivos de Exemplo
-Existem dez arquivos de texto, no formato `*.txt` presentes na pasta `test`, todos são textos de diferentes linguas obtidos no site `[https://www.gutenberg.org/](URL)`
+Existem dez arquivos de texto, no formato `*.txt` presentes na pasta `test`, todos são textos de diferentes linguas obtidos no site [https://www.gutenberg.org/](URL)
