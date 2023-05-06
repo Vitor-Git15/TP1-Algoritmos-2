@@ -3,7 +3,7 @@ Trabalho Prático 1 - Manipulação de sequências - Abordagem de aspectos prát
 
 ## Execução
 Rode `make` na pasta principal do arquivo para obtenção do executável `./main`
-É possível realizar tanto a compressão, quanto a descompressão, dos arquivos de teste. 
+É possível realizar tanto a compressão, quanto a descompressão, dos arquivos de teste com base no Makefile. 
 A compressão será realizada em todos os arquivos `*.txt` presentes na pasta `test`.
 Da mesma forma, a descompressão é realizada em todos os arquivos `*.z78` presentes na pasta `test`.
 
