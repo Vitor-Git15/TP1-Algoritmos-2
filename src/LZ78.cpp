@@ -21,6 +21,7 @@ int numBytes(int num){
 }
 
 void LZ78Compress(std::ifstream& input, std::ofstream& output) {
+    std::cout << "Running compression process..." << std::endl;
 
     std::vector<std::pair<int, char>> outputPairs;
 
@@ -86,9 +87,7 @@ void LZ78Compress(std::ifstream& input, std::ofstream& output) {
 
     int numbytes2code;
     numbytes2code = numBytes(maxCodeSave);
-
     std::cout << maxCodeSave << " " << numbytes2code << std::endl;
-
     for (auto it = outputPairs.begin(); it != outputPairs.end(); ++it){
         output.write((char*)(&it->first), numbytes2code);
         output.write((char*)(&it->second),sizeof(char));
@@ -97,6 +96,7 @@ void LZ78Compress(std::ifstream& input, std::ofstream& output) {
 
 
 void LZ78Decompress(std::ifstream& input, std::ofstream& output){
+    std::cout << "Running decompression process..." << std::endl;
 
     Dictionary dict;
 
@@ -106,7 +106,6 @@ void LZ78Decompress(std::ifstream& input, std::ofstream& output){
 
     int numbytes2code;
     numbytes2code = numBytes(maxCodeSave);
-    std::cout << maxCodeSave << " " << numbytes2code << std::endl;
 
     int code;
     code = 1;

@@ -19,8 +19,21 @@ HDRS = $(INC)/LZ78.hpp $(INC)/Trie.hpp
 CFLAGS = -std=c++11 -Wall -c -I$(INC)
 
 EXE = main
+all: exec
 
-$(EXE): $(OBJS)
+compress: exec
+	@echo "Running compress tests..."
+	@for file in $(wildcard $(TEST)/*.txt); do \
+		./main -c $$file; \
+	done
+
+decompress: compress
+	@echo "Running decompress tests..."
+	@for file in $(wildcard $(TEST)/*.z78); do \
+		./main -x $$file; \
+	done
+
+exec: $(OBJS)
 	$(CXX) -o $(EXE) $(OBJS)
 $(OBJ)/LZ78.o: $(HDRS) $(SRC)/LZ78.cpp
 	$(CXX) $(CFLAGS) -o  $(OBJ)/LZ78.o $(SRC)/LZ78.cpp 
@@ -30,4 +43,4 @@ $(OBJ)/main.o: $(HDRS) $(SRC)/main.cpp
 	$(CXX) $(CFLAGS) -o  $(OBJ)/main.o $(SRC)/main.cpp 
 
 clean:
-	rm -f $(OBJ)/*.o $(EXE)
+	rm -f $(OBJ)/*.o $(EXE) $(TEST)/*.z78
