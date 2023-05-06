@@ -10,12 +10,11 @@ Da mesma forma, a descompressão é realizada em todos os arquivos `*.z78` prese
 A seguir o código para executar a compressão.
 ```sh
 make compress
-```
-A descompressão não presume uma pré-compressão, ou seja, a chamada de compressão é sempre feita ao se chamar `make decompress`  
+``` 
 A seguir o código para executar a descompressão.
 ```sh
 make decompress
 ```
-
+A descompressão não presume uma pré-compressão, ou seja, a chamada de compressão é sempre feita ao se chamar `make decompress`. 
 ## Arquivos de Exemplo
 Existem dez arquivos de texto, no formato `*.txt` presentes na pasta `test`, todos são textos de diferentes linguas obtidos no site [https://www.gutenberg.org/](URL). Todos os testes realizados nos experimentos baseiam-se neles. Além disso, todos possuem um armazenamento inicial entre 1KB e 2MB.
