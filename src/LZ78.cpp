@@ -87,7 +87,6 @@ void LZ78Compress(std::ifstream& input, std::ofstream& output) {
 
     int numbytes2code;
     numbytes2code = numBytes(maxCodeSave);
-    std::cout << maxCodeSave << " " << numbytes2code << std::endl;
     for (auto it = outputPairs.begin(); it != outputPairs.end(); ++it){
         output.write((char*)(&it->first), numbytes2code);
         output.write((char*)(&it->second),sizeof(char));

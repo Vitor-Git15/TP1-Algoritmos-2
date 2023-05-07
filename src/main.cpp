@@ -71,8 +71,14 @@ void decompress(options* opt){
 
 void getOptions(int& argc, char **argv, options* opt){
 
-  if (argc != 3) {
-    std::cerr << "Error: Incorrect number of arguments passed." 
+  int argsWFileOut;
+  argsWFileOut = 5;
+
+  int argsWOFileOut;
+  argsWOFileOut = 3;
+
+  if (argc != argsWOFileOut && argc != argsWFileOut) {
+    std::cerr << "Error: Incorrect number of arguments passed. " 
               << "Please provide the correct number of arguments." << std::endl;
     exit(1);
   }
@@ -87,8 +93,8 @@ void getOptions(int& argc, char **argv, options* opt){
     opt->COMPRESSION = false;
   }
   else{
-    std::cerr << "Error: Invalid option selected" 
-              << "Please choose either compression '-c' or decompression '-x'." << std::endl;
+    std::cerr << "Error: Invalid option selected. " 
+              << "Please choose either compression \'-c\' or decompression \'-x\'." << std::endl;
     exit(1);
   }
 
@@ -108,8 +114,22 @@ void getOptions(int& argc, char **argv, options* opt){
     opt->outputFileName = opt->inputFileName.substr(0, opt->inputFileName.length() - z78Ext.length()).append(txtExt);
   }
   else {
-    std::cerr << "Error: The argument does not end with .txt or .z78 ";
-    std::cerr << "or the input file does not match the specified option." << std::endl;
+    std::cerr << "Error: The argument does not end with .txt or .z78 "
+              << "or the input file does not match the specified option." << std::endl;
+    exit(1);
+  }
+
+  if(argc == argsWOFileOut)
+    return;
+
+  std::string specifyOutputFile;
+  specifyOutputFile = argv[3];
+
+  if(specifyOutputFile.compare("-o") == 0)
+    opt->outputFileName = argv[4];
+  else{
+    std::cerr << "Error: Invalid option selected. " 
+              << "Please choose the \'-o\' option if you want to specify an output file." << std::endl;
     exit(1);
   }
 }
