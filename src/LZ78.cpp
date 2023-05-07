@@ -108,16 +108,16 @@ void LZ78Decompress(std::ifstream& input, std::ofstream& output){
 
     int code;
     code = 1;
-    int preffixCode;
+    int prefixCode;
 
     char ch;
 
-    while(input.read((char*)&preffixCode, numbytes2code)
+    while(input.read((char*)&prefixCode, numbytes2code)
        && input.read(&ch, sizeof(char))){
-        TrieNode* curr = dict.findCode(preffixCode);
+        TrieNode* curr = dict.findCode(prefixCode);
         
         if(curr == nullptr){
-            std::cerr << "Code " << preffixCode << " not found" << std::endl;
+            std::cerr << "Code " << prefixCode << " not found" << std::endl;
             exit(1);
         }
         else{
