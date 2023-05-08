@@ -1,5 +1,5 @@
 # TP1 - Algoritmos-2
-Trabalho Prático 1 - Manipulação de sequências - Abordagem de aspectos práticos de manipulação de sequências. Especificamente, aspectos de implementação de árvores de prefixo aplicada ao problema de compressão de arquivos com base no algoritmo LZ78.
+Trabalho Prático 1 - Manipulação de sequências - Abordagem de aspectos práticos de manipulação de sequências. Especificamente, aspectos de implementação de árvores de prefixo aplicada ao problema de compressão de arquivos, com base no algoritmo LZ78.
 
 ## Execução
 Rode `make` na pasta principal do arquivo para obtenção do executável `main`
